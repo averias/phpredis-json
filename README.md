@@ -7,7 +7,7 @@ It's built on top of the `phpredis` and use it as Redis client,
 so you can also take advantage of some of the features included in `phpredis` as Redis client.
 
 ## Why?
-Although you can issue RedisJSON commands by using some PHP Redis clients which provides you the ability of sending 
+Although you can issue RedisJSON commands by using some PHP Redis clients which provides you the ability to send 
 raw Redis commands, Phpredis-JSON:
 - avoids you the task of encoding your PHP data structures to JSON before sending them to Redis 
 and decode the JSON responses back from Redis
@@ -27,7 +27,7 @@ use Averias\RedisJson\Enum\JsonCommands;
 use Averias\RedisJson\Exception\ResponseException;
 use Averias\RedisJson\Factory\RedisJsonClientFactory;
 
-// *** get a RedisJsonClient
+// *** get a RedisJsonClient ***
 $redisJsonClientFactory = new RedisJsonClientFactory();
 /**
  * creates a RedisJsonClient with default connection params:
@@ -51,7 +51,7 @@ $client = $redisJsonClientFactory->createClient([
     'database' => 15
 ]);
 
-// *** Redis JSON commands
+// *** Redis JSON commands ***
 $result = $client->jsonSet('people', ["name" => "gafael", "age" => 12]);
 echo ($result === true ? 'true' : 'false') . PHP_EOL; // true
 
@@ -64,7 +64,7 @@ echo $result . PHP_EOL; // "gafael"
 $result =  $client->jsonGet('people', '.age');
 echo $result . PHP_EOL; // 12
 
-// "nonexistent" key does not exists, so a ResponseException is thrown
+// "nonexistent" key does not exist, so a ResponseException is thrown
 try {
     $result = $client->jsonGet('nonexistent');
     echo $result . PHP_EOL;
@@ -72,10 +72,12 @@ try {
     echo "key nonexistent does not exist" . PHP_EOL;
 }
 
-// *** you can also send RedisJSON command as raw commands using "executeRawCommand", you will send a receive JSON values
+// *** you can also send RedisJSON command as raw commands using "RedisJsonClient::executeRawCommand"  ***
+// you will send
 $result =  $client->executeRawCommand(JsonCommands::SET, 'people', '.colors', '["blue", "green"]');
 echo $result . PHP_EOL; // 'OK'
 
+// and receive JSON values
 $result =  $client->executeRawCommand(JsonCommands::GET, 'people', '.');
 echo $result . PHP_EOL; // {"name":"gafael","age":12,"colors":["blue","green"]}
 
@@ -97,7 +99,7 @@ echo json_encode($ret) . PHP_EOL;
 ```
 
 ## Commands
-- **RedisJSON commands:** please take a look to the list of [phpredis-json commands]()
+- **RedisJSON commands:** please take a look to the list of [phpredis-json commands](https://github.com/averias/phpredis-json/blob/master/docs/JSON-COMMANDS.md)
 - **Phpredis commands:** you can send Redis commands as specified in [phpredis documentation](https://github.com/phpredis/phpredis#table-of-contents)
 - **Raw commands:** you can send whatever you want to Redis by using `RedisJsonClient::executeRawCommand`:
 ```
