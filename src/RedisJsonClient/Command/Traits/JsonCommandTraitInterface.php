@@ -30,7 +30,7 @@ interface JsonCommandTraitInterface
 
     public function jsonMultiplyNumBy(string $key, $number, string $path = '.');
 
-    public function jsonAppendString(string $key, string $value, string $path = '.');
+    public function jsonStringAppend(string $key, string $value, string $path = '.');
 
     public function jsonStringLength(string $key, string $path = '.');
 

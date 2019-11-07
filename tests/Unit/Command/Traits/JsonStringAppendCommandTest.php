@@ -18,15 +18,15 @@ use Averias\RedisJson\Enum\JsonCommands;
 use Averias\RedisJson\Tests\Enum\Keys;
 use Averias\RedisJson\Tests\Unit\Command\BaseTestJsonCommandTrait;
 
-class JsonAppendStringCommandTest extends BaseTestJsonCommandTrait
+class JsonStringAppendCommandTest extends BaseTestJsonCommandTrait
 {
-    public function testJsonAppendString(): void
+    public function testJsonStringAppend(): void
     {
         $mock = $this->getRedisJsonClient(
             8,
             [JsonCommands::APPEND_STRING, [Keys::DEFAULT_KEY], [Keys::DEFAULT_KEY, '.', json_encode(' days')]]
         );
-        $result = $mock->jsonAppendString(Keys::DEFAULT_KEY, ' days', '.');
+        $result = $mock->jsonStringAppend(Keys::DEFAULT_KEY, ' days', '.');
         $this->assertEquals(8, $result);
     }
 }

@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
 
 class BaseTestIntegration extends TestCase
 {
-    protected static $defaultData = [
+    public static $defaultData = [
         'name' => 'Peter',
         'age' => 38,
         'height' => 1.79,

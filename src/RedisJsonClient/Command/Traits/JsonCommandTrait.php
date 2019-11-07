@@ -113,7 +113,7 @@ trait JsonCommandTrait
      * @return int
      * @throws ResponseException
      */
-    public function jsonAppendString(string $key, string $value, string $path = '.')
+    public function jsonStringAppend(string $key, string $value, string $path = '.')
     {
         return $this->executeJsonCommand(JsonCommands::APPEND_STRING, [$key], [$key, $path, $this->encode($value)]);
     }
