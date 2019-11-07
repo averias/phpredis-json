@@ -18,11 +18,11 @@ use Averias\RedisJson\Exception\ResponseException;
 use Averias\RedisJson\Tests\Enum\Keys;
 use Averias\RedisJson\Tests\Integration\BaseTestIntegration;
 
-class JsonAppendStringCommandTest extends BaseTestIntegration
+class jsonStringAppendCommandTest extends BaseTestIntegration
 {
     public function testAppendString()
     {
-        $length = static::$reJsonClient->jsonAppendString(Keys::DEFAULT_KEY, ' Newman', '.name');
+        $length = static::$reJsonClient->jsonStringAppend(Keys::DEFAULT_KEY, ' Newman', '.name');
         $this->assertEquals(strlen('Peter Newman'), $length);
 
         $result = static::$reJsonClient->jsonGet(Keys::DEFAULT_KEY, '.name');
@@ -32,36 +32,36 @@ class JsonAppendStringCommandTest extends BaseTestIntegration
     public function testAppendStringOnNumberPathException()
     {
         $this->expectException(ResponseException::class);
-        static::$reJsonClient->jsonAppendString(Keys::DEFAULT_KEY, 'years', '.age');
+        static::$reJsonClient->jsonStringAppend(Keys::DEFAULT_KEY, 'years', '.age');
     }
 
     public function testAppendStringOnObjectPathException()
     {
         $this->expectException(ResponseException::class);
-        static::$reJsonClient->jsonAppendString(Keys::DEFAULT_KEY, 'years', '.location');
+        static::$reJsonClient->jsonStringAppend(Keys::DEFAULT_KEY, 'years', '.location');
     }
 
     public function testAppendStringOnArrayPathException()
     {
         $this->expectException(ResponseException::class);
-        static::$reJsonClient->jsonAppendString(Keys::DEFAULT_KEY, 'years', '.colors');
+        static::$reJsonClient->jsonStringAppend(Keys::DEFAULT_KEY, 'years', '.colors');
     }
 
     public function testAppendStringOnBooleanPathException()
     {
         $this->expectException(ResponseException::class);
-        static::$reJsonClient->jsonAppendString(Keys::DEFAULT_KEY, 'years', '.license');
+        static::$reJsonClient->jsonStringAppend(Keys::DEFAULT_KEY, 'years', '.license');
     }
 
     public function testNonExistentKeyException()
     {
         $this->expectException(ResponseException::class);
-        static::$reJsonClient->jsonAppendString('nonexistent', 'abc');
+        static::$reJsonClient->jsonStringAppend('nonexistent', 'abc');
     }
 
     public function testNonExistentPathException()
     {
         $this->expectException(ResponseException::class);
-        static::$reJsonClient->jsonAppendString(Keys::DEFAULT_KEY, 'abc', '.nonexistent');
+        static::$reJsonClient->jsonStringAppend(Keys::DEFAULT_KEY, 'abc', '.nonexistent');
     }
 }
