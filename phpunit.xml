@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnError="true"
+         stopOnFailure="true"
+         verbose="true"
+>
+    <testsuites>
+        <testsuite name="PHP RedisJson  Integration Tests">
+            <directory suffix="Test.php" >./tests/Integration/</directory>
+        </testsuite>
+        <testsuite name="PHP RedisJson Unit Tests">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+            <exclude>
+                <directory>./src/RedisJsonClient/Exception</directory>
+                <directory>./src/RedisJsonClient/Enum</directory>
+                <directory>./src/RedisJsonClient/Pipeline/Version</directory>
+                <directory suffix="Interface.php">./src/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="build/coverage" />
+    </logging>
+    <php>
+        <const name="REDIS_TEST_SERVER" value="127.0.0.1:6379" />
+        <const name="REDIS_TEST_VERSION" value="4.0" />
+    </php>
+</phpunit>

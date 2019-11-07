@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  redis4:
+    container_name: phpredis-json4
+    image: bewater13/rejson-4:latest
+    ports:
+      - "6390:6379"
+
+  redis5:
+    container_name: phpredis-json5
+    image: bewater13/rejson-5:latest
+    ports:
+      - "6391:6379"

@@ -1,0 +1,31 @@
+<?php
+/**
+ * This file is part of PhpRedisJSON library
+ *
+ * @project   php-redis-json
+ * @author    Rafael Campoy <rafa.campoy@gmail.com>
+ * @copyright 2019 Rafael Campoy <rafa.campoy@gmail.com>
+ * @license   MIT
+ * @link      https://github.com/averias/php-redis-json
+ *
+ * Copyright and license information, is included in
+ * the LICENSE file that is distributed with this source code.
+ */
+
+namespace Averias\RedisJson\Parser\Response;
+
+use Averias\RedisJson\Exception\ResponseException;
+use Averias\RedisJson\Parser\ParserInterface;
+
+class DecodeFromJson extends BaseJsonDecoderParser implements ParserInterface
+{
+    /**
+     * @param string|bool $response
+     * @return mixed
+     * @throws ResponseException
+     */
+    public function parse($response)
+    {
+        return $this->decodeIfNotFalse($response);
+    }
+}
