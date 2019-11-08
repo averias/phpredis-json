@@ -125,7 +125,7 @@ by running the above bash script, two docker images will be pulled for Redis ser
 a container for every image listening in ports 6390, for Redis server 4.0, and port 6391 for Redis server 5.0. After
 running the tests over both Redis Servers, the container will be stopped.
 
-## Tests
+## Examples
 - [Usage](https://github.com/averias/phpredis-json/blob/master/examples/usage.php)
 - [Commands](https://github.com/averias/phpredis-json/blob/master/examples/commands.php)
 
