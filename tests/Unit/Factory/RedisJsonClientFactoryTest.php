@@ -17,6 +17,7 @@ namespace Averias\RedisJson\Tests\Unit\Factory;
 use Averias\RedisJson\Client\RedisJsonClientInterface;
 use Averias\RedisJson\Exception\RedisClientException;
 use Averias\RedisJson\Factory\RedisJsonClientFactory;
+use Averias\RedisJson\RedisJsonClient\Enum\Connection;
 use PHPUnit\Framework\TestCase;
 
 class RedisJsonClientFactoryTest extends TestCase
@@ -34,8 +35,9 @@ class RedisJsonClientFactoryTest extends TestCase
     {
         $factory = new RedisJsonClientFactory();
         $client = $factory->createClient([
-            'server' => REDIS_TEST_SERVER,
-            'version' => REDIS_TEST_VERSION
+            Connection::HOST => REDIS_TEST_SERVER,
+            Connection::PORT => (int) REDIS_TEST_PORT,
+            Connection::TIMEOUT => 2
         ]);
 
         $this->assertInstanceOf(RedisJsonClientInterface::class, $client);

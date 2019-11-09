@@ -17,7 +17,7 @@ and decode the JSON responses back from Redis
 ## Requirements
 - Redis server 4.0+ version (RedisJson Module is only available from Redis 4.0+)
 - RedisJson Module installed on Redis server as specified in [Building and loading RedisJSON Module](https://oss.redislabs.com/redisjson/#building-and-loading-the-module)
-- PHP 7.2+ with PHP Redis extension installed
+- PHP 7.2+ with PHP Redis extension 5 installed
 
 ## Usage
 ```
@@ -111,19 +111,22 @@ $client->executeRawCommand('hget, 'hash-key', 'foo');
 ``` 
 
 ## Tests
-#### On a local Redis server 4.0+ with RedisJSON module installed
+#### On a local Redis server 4.0+ with RedisJSON module and Redis extension 5 installed
 From console run the following command from the root directory of this project:
 
-`./vendor/bin/phpunit `
+`./vendor/bin/phpunit`
 
+if you don't have configured your local Redis server in 127.0.0.1:6379 you can set REDIS_TEST_SERVER and REDIS_TEST_PORT 
+in `./phpunit.xml` file with your local Redis host and port before running the above command.
+  
 #### Docker
 Having Docker installed, run the following command in the root directory of this project:
 
-`bash run-tests.sh`
+`bash run-tests-docker.sh`
 
-by running the above bash script, two docker images will be pulled for Redis server versions 4.0 and 5.0 and run up
-a container for every image listening in ports 6390, for Redis server 4.0, and port 6391 for Redis server 5.0. After
-running the tests over both Redis Servers, the container will be stopped.
+by running the above bash script, two docker services will be built, one with PHP 7.2 with xdebug and redis extensions
+enabled and another with the image of `redislab\rejson:1.0.4` (Redis server 5 with RedisJson module installed). 
+Then the tests will run inside `phpredis-json` docker service container and finally both container will be stopped.
 
 ## Examples
 - [Usage](https://github.com/averias/phpredis-json/blob/master/examples/usage.php)

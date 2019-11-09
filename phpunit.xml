@@ -34,7 +34,7 @@
         <log type="coverage-html" target="build/coverage" />
     </logging>
     <php>
-        <const name="REDIS_TEST_SERVER" value="127.0.0.1:6379" />
-        <const name="REDIS_TEST_VERSION" value="4.0" />
+        <const name="REDIS_TEST_SERVER" value="127.0.0.1" />
+        <const name="REDIS_TEST_PORT" value="6379" />
     </php>
 </phpunit>
