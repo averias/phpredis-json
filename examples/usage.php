@@ -26,7 +26,7 @@ $redisJsonClientFactory = new RedisJsonClientFactory();
 /** @var RedisJsonClient $client */
 $client = $redisJsonClientFactory->createClient([
     'host' => '127.0.0.1',
-    'port' => 6390,
+    'port' => 6379,
     'timeout' => 2,
     'database' => 15
 ]);

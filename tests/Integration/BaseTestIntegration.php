@@ -17,6 +17,7 @@ namespace Averias\RedisJson\Tests\Integration;
 use Averias\RedisJson\Client\RedisJsonClientInterface;
 use Averias\RedisJson\Exception\RedisClientException;
 use Averias\RedisJson\Factory\RedisJsonClientFactory;
+use Averias\RedisJson\RedisJsonClient\Enum\Connection;
 use Averias\RedisJson\Tests\Enum\Keys;
 use PHPUnit\Framework\TestCase;
 
@@ -68,9 +69,9 @@ class BaseTestIntegration extends TestCase
     protected static function getReJsonClientConfig()
     {
         return [
-            'server' => REDIS_TEST_SERVER,
-            'timeout' => 2,
-            'version' => REDIS_TEST_VERSION
+            Connection::HOST => REDIS_TEST_SERVER,
+            Connection::PORT => (int) REDIS_TEST_PORT,
+            Connection::TIMEOUT => 2
         ];
     }
 
