@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Averias\\RedisJson\\": "src"
+      "Averias\\RedisJson\\": "src/RedisJsonClient"
     }
   },
   "autoload-dev": {

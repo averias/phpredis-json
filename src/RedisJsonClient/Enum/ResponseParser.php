@@ -17,7 +17,7 @@ namespace Averias\RedisJson\Enum;
 use Averias\RedisJson\Parser\Response\DecodeArrayOfJson;
 use Averias\RedisJson\Parser\Response\DecodeFromJson;
 use Averias\RedisJson\Parser\Response\IntegerToBoolean;
-use Averias\RedisJson\RedisJsonClient\Parser\Response\OkToTrue;
+use Averias\RedisJson\Parser\Response\OkToTrue;
 use MyCLabs\Enum\Enum;
 
 class ResponseParser extends Enum

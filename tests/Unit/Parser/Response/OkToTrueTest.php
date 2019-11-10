@@ -15,7 +15,7 @@
 namespace Averias\RedisJson\Tests\Unit\Parser\Response;
 
 use Averias\RedisJson\Exception\ResponseException;
-use Averias\RedisJson\RedisJsonClient\Parser\Response\OkToTrue;
+use Averias\RedisJson\Parser\Response\OkToTrue;
 use PHPUnit\Framework\TestCase;
 
 class OkToTrueTest extends TestCase

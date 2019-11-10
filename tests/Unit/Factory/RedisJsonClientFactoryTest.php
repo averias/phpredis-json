@@ -17,7 +17,7 @@ namespace Averias\RedisJson\Tests\Unit\Factory;
 use Averias\RedisJson\Client\RedisJsonClientInterface;
 use Averias\RedisJson\Exception\RedisClientException;
 use Averias\RedisJson\Factory\RedisJsonClientFactory;
-use Averias\RedisJson\RedisJsonClient\Enum\Connection;
+use Averias\RedisJson\Enum\Connection;
 use PHPUnit\Framework\TestCase;
 
 class RedisJsonClientFactoryTest extends TestCase

@@ -20,7 +20,7 @@ use Averias\RedisJson\Enum\Module;
 use Averias\RedisJson\Enum\Version;
 use Averias\RedisJson\Exception\InvalidRedisVersionException;
 use Averias\RedisJson\Exception\RedisJsonModuleNotInstalledException;
-use Averias\RedisJson\RedisJsonClient\Adapter\RedisClientAdapter;
+use Averias\RedisJson\Adapter\RedisClientAdapter;
 use Averias\RedisJson\Validator\RedisClientValidator;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -29,7 +29,6 @@ class AdapterProviderTest extends TestCase
 {
     /**
      * @dataProvider getDataProviderForRedisClientConfigurationExceptions
-     * @param string $supportedVersion
      * @param array $info
      * @param array $moduleList
      * @param string $exception

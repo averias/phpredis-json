@@ -41,12 +41,4 @@ interface RedisClientAdapterInterface
      * @return mixed
      */
     public function executeRawCommand(string $commandName, ...$arguments);
-
-//    /**
-//     * @param mixed $pipeline
-//     * @return mixed|RedisJsonPipelineInterface
-//     * @throws InvalidRedisVersionException
-//     * @throws ResponseException
-//     */
-//    public function executePipeline($pipeline);
 }
