@@ -25,7 +25,6 @@
             <exclude>
                 <directory>./src/RedisJsonClient/Exception</directory>
                 <directory>./src/RedisJsonClient/Enum</directory>
-                <directory>./src/RedisJsonClient/Pipeline/Version</directory>
                 <directory suffix="Interface.php">./src/</directory>
             </exclude>
         </whitelist>
