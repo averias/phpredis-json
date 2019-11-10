@@ -12,7 +12,7 @@
  * the LICENSE file that is distributed with this source code.
  */
 
-namespace Averias\RedisJson\RedisJsonClient\Enum;
+namespace Averias\RedisJson\Enum;
 
 use MyCLabs\Enum\Enum;
 

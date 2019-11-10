@@ -14,10 +14,10 @@
 
 declare(strict_types=1);
 
-namespace Averias\RedisJson\RedisJsonClient\Connection;
+namespace Averias\RedisJson\Connection;
 
-use Averias\RedisJson\RedisJsonClient\Enum\Connection;
-use Averias\RedisJson\RedisJsonClient\Exception\ConnectionOptionsException;
+use Averias\RedisJson\Enum\Connection;
+use Averias\RedisJson\Exception\ConnectionOptionsException;
 
 class ConnectionOptions
 {

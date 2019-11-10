@@ -16,9 +16,9 @@ namespace Averias\RedisJson\Tests\Unit\Adapter;
 
 use Averias\RedisJson\Enum\JsonCommands;
 use Averias\RedisJson\Exception\ResponseException;
-use Averias\RedisJson\RedisJsonClient\Adapter\RedisClientAdapter;
-use Averias\RedisJson\RedisJsonClient\Connection\ConnectionOptions;
-use Averias\RedisJson\RedisJsonClient\Exception\ConnectionException;
+use Averias\RedisJson\Adapter\RedisClientAdapter;
+use Averias\RedisJson\Connection\ConnectionOptions;
+use Averias\RedisJson\Exception\ConnectionException;
 use PHPUnit\Framework\MockObject\Matcher\InvokedCount;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

@@ -12,7 +12,7 @@
  * the LICENSE file that is distributed with this source code.
  */
 
-namespace Averias\RedisJson\RedisJsonClient\Parser\Response;
+namespace Averias\RedisJson\Parser\Response;
 
 use Averias\RedisJson\Exception\ResponseException;
 

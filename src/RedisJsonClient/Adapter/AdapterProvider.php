@@ -17,9 +17,8 @@ namespace Averias\RedisJson\Adapter;
 use Averias\RedisJson\Exception\InvalidRedisVersionException;
 use Averias\RedisJson\Exception\RedisJsonModuleNotInstalledException;
 use Averias\RedisJson\Exception\ResponseException;
-use Averias\RedisJson\RedisJsonClient\Adapter\RedisClientAdapter;
-use Averias\RedisJson\RedisJsonClient\Connection\ConnectionOptions;
-use Averias\RedisJson\RedisJsonClient\Exception\ConnectionException;
+use Averias\RedisJson\Connection\ConnectionOptions;
+use Averias\RedisJson\Exception\ConnectionException;
 use Averias\RedisJson\Validator\RedisClientValidatorInterface;
 use Redis;
 
@@ -45,7 +44,7 @@ class AdapterProvider
     {
         $redisClient = $this->getRedisClient($config);
 
-        $redisInfo = $redisClient->executeCommandByName('INFO');
+        $redisInfo = $redisClient->executeRawCommand('INFO');
         $redisServerVersion = $redisInfo['redis_version'];
         if (!$this->validator->isValidRedisVersion($redisServerVersion)) {
             throw new InvalidRedisVersionException(
@@ -63,10 +62,10 @@ class AdapterProvider
 
     /**
      * @param array $config
-     * @return RedisClientAdapter
+     * @return RedisClientAdapterInterface
      * @throws ConnectionException
      */
-    protected function getRedisClient(array $config = []): RedisClientAdapter
+    protected function getRedisClient(array $config = []): RedisClientAdapterInterface
     {
         $connectionOptions = new ConnectionOptions($config);
         return new RedisClientAdapter(new Redis(), $connectionOptions);

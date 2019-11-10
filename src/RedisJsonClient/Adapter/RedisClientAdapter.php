@@ -12,14 +12,13 @@
  * the LICENSE file that is distributed with this source code.
  */
 
-namespace Averias\RedisJson\RedisJsonClient\Adapter;
+namespace Averias\RedisJson\Adapter;
 
-use Averias\RedisJson\Adapter\RedisClientAdapterInterface;
 use Averias\RedisJson\Enum\JsonCommands;
 use Averias\RedisJson\Enum\ResponseParser;
 use Averias\RedisJson\Exception\ResponseException;
-use Averias\RedisJson\RedisJsonClient\Connection\ConnectionOptions;
-use Averias\RedisJson\RedisJsonClient\Exception\ConnectionException;
+use Averias\RedisJson\Connection\ConnectionOptions;
+use Averias\RedisJson\Exception\ConnectionException;
 use Redis;
 use Exception;
 

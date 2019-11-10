@@ -16,7 +16,7 @@ namespace Averias\RedisJson\Tests\Unit\Command;
 
 use Averias\RedisJson\Client\RedisJsonClient;
 use Averias\RedisJson\Client\RedisJsonClientInterface;
-use Averias\RedisJson\RedisJsonClient\Adapter\RedisClientAdapter;
+use Averias\RedisJson\Adapter\RedisClientAdapter;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
