@@ -44,7 +44,7 @@ class AdapterProvider
     {
         $redisClient = $this->getRedisClient($config);
 
-        $redisInfo = $redisClient->executeRawCommand('INFO');
+        $redisInfo = $redisClient->executeCommandByName('INFO', []);
         $redisServerVersion = $redisInfo['redis_version'];
         if (!$this->validator->isValidRedisVersion($redisServerVersion)) {
             throw new InvalidRedisVersionException(
