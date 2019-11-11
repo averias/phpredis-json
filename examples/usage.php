@@ -22,12 +22,23 @@ use Averias\RedisJson\Factory\RedisJsonClientFactory;
 // instantiate factory
 $redisJsonClientFactory = new RedisJsonClientFactory();
 
-// create a client with default configuration
-/** @var RedisJsonClient $defaultClient */
+/**
+ * creates a client with default connection params:
+ * [
+ *     'host' => '127.0.0.1',
+ *     'port' => 6379,
+ *     'timeout' => 0.0, // seconds
+ *     'retryInterval' => 15 // milliseconds
+ *     'readTimeout' => 2, // seconds
+ *     'persistenceId' => null // string for persistent connections, null for no persistent ones
+ *     'database' => 0 // Redis database index [0..15]
+ * ]
+ */
+
+/** @var RedisJsonClient $client */
 $client = $redisJsonClientFactory->createClient();
 
 // creates a configured client
-/** @var RedisJsonClient $client */
 $client = $redisJsonClientFactory->createClient([
     'host' => '127.0.0.1',
     'port' => 6379,
