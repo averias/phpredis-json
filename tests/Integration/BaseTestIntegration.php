@@ -56,22 +56,13 @@ class BaseTestIntegration extends TestCase
         }
     }
 
-    /**
-     * @param array $data
-     * @throws RedisClientException
-     */
-    public static function loadDataBeforeClass(array $data)
-    {
-        static::setUpBeforeClass();
-        static::storeData(Keys::DEFAULT_KEY, $data);
-    }
-
     protected static function getReJsonClientConfig()
     {
         return [
             Connection::HOST => REDIS_TEST_SERVER,
             Connection::PORT => (int) REDIS_TEST_PORT,
-            Connection::TIMEOUT => 2
+            Connection::TIMEOUT => 2,
+            Connection::DATABASE => 15
         ];
     }
 

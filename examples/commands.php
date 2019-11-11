@@ -22,7 +22,9 @@ use Averias\RedisJson\Tests\Integration\BaseTestIntegration;
 $redisJsonClientFactory = new RedisJsonClientFactory();
 
 /** @var RedisJsonClient $defaultClient */
-$client = $redisJsonClientFactory->createClient();
+$client = $redisJsonClientFactory->createClient([
+    'database' => 15
+]);
 
 // create a constant for the key name
 const OBJECT_KEY = 'test-object';
