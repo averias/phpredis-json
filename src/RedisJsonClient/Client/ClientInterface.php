@@ -16,6 +16,5 @@ namespace Averias\RedisJson\Client;
 
 interface ClientInterface
 {
-//    public function pipeline($pipeline = null);
     public function executeRawCommand(string $commandName, ...$arguments);
 }

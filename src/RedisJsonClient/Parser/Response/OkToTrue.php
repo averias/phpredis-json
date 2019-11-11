@@ -15,15 +15,16 @@
 namespace Averias\RedisJson\Parser\Response;
 
 use Averias\RedisJson\Exception\ResponseException;
+use Averias\RedisJson\Parser\ParserInterface;
 
-class OkToTrue
+class OkToTrue implements ParserInterface
 {
     /**
      * @param $response
      * @return bool
      * @throws ResponseException
      */
-    public function parse($response): bool
+    public function parse($response)
     {
         if (!is_string($response)) {
             throw new ResponseException(sprintf("expected string response but got '%s'", gettype($response)));

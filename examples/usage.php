@@ -22,6 +22,10 @@ use Averias\RedisJson\Factory\RedisJsonClientFactory;
 // instantiate factory
 $redisJsonClientFactory = new RedisJsonClientFactory();
 
+// create a client with default configuration
+/** @var RedisJsonClient $defaultClient */
+$client = $redisJsonClientFactory->createClient();
+
 // creates a configured client
 /** @var RedisJsonClient $client */
 $client = $redisJsonClientFactory->createClient([
@@ -43,10 +47,6 @@ $client = $redisJsonClientFactory->createClient([
  *     'database' => 0 // Redis database index [0..15]
  * ]
  */
-
-// create a client with default configuration
-/** @var RedisJsonClient $defaultClient */
-$client = $redisJsonClientFactory->createClient();
 
 // json commands
 $result = $client->jsonSet('people', ["name" => "gafael", "age" => 12]);
