@@ -30,7 +30,7 @@ $client = $redisJsonClientFactory->createClient([
 const OBJECT_KEY = 'test-object';
 const SECONDARY = 'secondary-test-object';
 
-// store default data default data
+// store default data
 //    [
 //        'name' => 'Peter',
 //        'age' => 38,
