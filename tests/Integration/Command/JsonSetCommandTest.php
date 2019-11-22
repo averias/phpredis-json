@@ -20,7 +20,7 @@ use Averias\RedisJson\Tests\Integration\BaseTestIntegration;
 
 class JsonSetCommandTest extends BaseTestIntegration
 {
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$reJsonClient  = self::getReJsonClient();
     }

@@ -21,7 +21,7 @@ class JsonMultiGetCommandTest extends BaseTestIntegration
 {
     protected static $data;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
 

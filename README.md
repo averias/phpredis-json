@@ -117,7 +117,8 @@ From console run the following command from the root directory of this project:
 `./vendor/bin/phpunit`
 
 if you don't have configured your local Redis server in 127.0.0.1:6379 you can set REDIS_TEST_SERVER and REDIS_TEST_PORT 
-in `./phpunit.xml` file with your local Redis host and port before running the above command.
+and REDIS_TEST_DATABASE in `./phpunit.xml` file with your local Redis host, port and database before running the above 
+command.
   
 #### Docker
 Having Docker installed, run the following command in the root directory of this project:
