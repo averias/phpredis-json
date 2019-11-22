@@ -124,7 +124,7 @@ class RedisClientAdapter implements RedisClientAdapterInterface
             $this->redis->select($this->connectionOptions->getDatabase());
         }
 
-        $this->redis->setOption(Redis::OPT_REPLY_LITERAL, 1);
+        $this->redis->setOption(8, 1);
     }
 
     /**

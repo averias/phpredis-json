@@ -412,7 +412,7 @@ class RedisClientAdapterTest extends TestCase
         }
         $redisMock->expects($setOptionMethodExpectation)
             ->method('setOption')
-            ->with(Redis::OPT_REPLY_LITERAL, true);
+            ->with(8, 1);
         $redisMock->expects($selectMethodExpectation)
             ->method('select')
             ->with($databaseIndex);
