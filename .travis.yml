@@ -15,4 +15,4 @@ before_install:
   - docker ps -a
 
 script:
-  - ./vendor/bin/phpunit -configuration ./docker-tests/phpunit_docker.xml
+  - ./vendor/bin/phpunit --configuration ./docker-tests/phpunit_docker.xml
