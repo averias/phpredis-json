@@ -1,0 +1,18 @@
+language: php
+php:
+  - '7.2'
+
+services:
+  - docker
+
+install:
+  - composer install
+
+before_install:
+  - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - docker pull redislabs/rejson:1.0.4
+  - docker run --name redislab-rejson -it -d -p 6379:6379 redislabs/rejson:1.0.4
+  - docker ps -a
+
+script:
+  - ./vendor/bin/phpunit -configuration ./docker-tests/phpunit_docker.xml

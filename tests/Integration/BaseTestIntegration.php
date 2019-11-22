@@ -51,8 +51,8 @@ class BaseTestIntegration extends TestCase
     public static function tearDownAfterClass(): void
     {
         if (static::$reJsonClient) {
-            static::$reJsonClient->select(0);
-            static::$reJsonClient->flushall();
+            static::$reJsonClient->select(REDIS_TEST_DATABASE);
+            static::$reJsonClient->flushDb();
         }
     }
 
@@ -62,7 +62,7 @@ class BaseTestIntegration extends TestCase
             Connection::HOST => REDIS_TEST_SERVER,
             Connection::PORT => (int) REDIS_TEST_PORT,
             Connection::TIMEOUT => 2,
-            Connection::DATABASE => 15
+            Connection::DATABASE => (int) REDIS_TEST_DATABASE
         ];
     }
 
