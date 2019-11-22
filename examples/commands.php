@@ -29,63 +29,68 @@ $client = $redisJsonClientFactory->createClient([
 // create a constant for the key name
 const OBJECT_KEY = 'test-object';
 const SECONDARY = 'secondary-test-object';
+const COLORS_KEY = '.colors';
 
-// store default data
-//    [
-//        'name' => 'Peter',
-//        'age' => 38,
-//        'height' => 1.79,
-//        'location' => [
-//            'address' => 'Pub Street, 39',
-//            'city' => 'Limerick',
-//            'country' => 'Ireland'
-//        ],
-//        'colors' => ['white', 'black'],
-//        'license' => true
-//    ];
+/**
+ * store default data
+ *  [
+ *     'name' => 'Peter',
+ *     'age' => 38,
+ *     'height' => 1.79,
+ *     'location' => [
+ *          'address' => 'Pub Street, 39',
+ *          'city' => 'Limerick',
+ *          'country' => 'Ireland'
+ *     ],
+ *     'colors' => ['white', 'black'],
+ *     'license' => true
+ *  ];
+ */
+
+
 $client->jsonSet(OBJECT_KEY, BaseTestIntegration::$defaultData);
 
 echo sprintf("*** Added object to '%s' key: %s", OBJECT_KEY, PHP_EOL);
 echo json_encode($client->jsonGet(OBJECT_KEY), true) . PHP_EOL . PHP_EOL;
 
 // append to array
-$result = $client->jsonArrayAppend(OBJECT_KEY, '.colors', 'blue', 'white');
+$result = $client->jsonArrayAppend(OBJECT_KEY, COLORS_KEY, 'blue', 'white');
 echo sprintf("*** Appended colors 'blue' and 'white' to '.colors' path %s", PHP_EOL);
-echo sprintf("array after appending: %s %s", json_encode($client->jsonGet(OBJECT_KEY, '.colors'), true), PHP_EOL);
+echo sprintf("array after appending: %s %s", json_encode($client->jsonGet(OBJECT_KEY, COLORS_KEY), true), PHP_EOL);
 echo sprintf("new length of the array: %d %s", $result, PHP_EOL . PHP_EOL);
 
 // insert into array
-$result = $client->jsonArrayInsert(OBJECT_KEY, '.colors', 3, 'green');
+$result = $client->jsonArrayInsert(OBJECT_KEY, COLORS_KEY, 3, 'green');
 echo sprintf("*** Inserted color 'green' into '.colors' path in position (index) 3 %s", PHP_EOL);
-echo sprintf("array after inserting: %s %s", json_encode($client->jsonGet(OBJECT_KEY, '.colors'), true), PHP_EOL);
+echo sprintf("array after inserting: %s %s", json_encode($client->jsonGet(OBJECT_KEY, COLORS_KEY), true), PHP_EOL);
 echo sprintf("new length of the array: %d %s", $result, PHP_EOL . PHP_EOL);
 
 // get the index of one element in a array
-$result = $client->jsonArrayIndex(OBJECT_KEY, 'white', '.colors');
+$result = $client->jsonArrayIndex(OBJECT_KEY, 'white', COLORS_KEY);
 echo sprintf("*** Index of color 'white' (duplicated) when searching from the beginning %s", PHP_EOL);
 echo sprintf("index of 'white' color : %d %s", $result, PHP_EOL . PHP_EOL);
-$result = $client->jsonArrayIndex(OBJECT_KEY, 'white', '.colors', -3);
+$result = $client->jsonArrayIndex(OBJECT_KEY, 'white', COLORS_KEY, -3);
 echo sprintf("*** Index of color 'white' (duplicated) when searching from the end %s", PHP_EOL);
 echo sprintf("index of 'white' color : %d %s", $result, PHP_EOL . PHP_EOL);
 
 // remove element from array
-$result = $client->jsonArrayPop(OBJECT_KEY, '.colors');
+$result = $client->jsonArrayPop(OBJECT_KEY, COLORS_KEY);
 echo sprintf("*** Removed last element in '.colors' path %s", PHP_EOL);
 echo sprintf("removed element: %s %s", $result, PHP_EOL . PHP_EOL);
-$result = $client->jsonArrayPop(OBJECT_KEY, '.colors', 2);
+$result = $client->jsonArrayPop(OBJECT_KEY, COLORS_KEY, 2);
 echo sprintf("*** Removed element in index 2 in '.colors' path %s", PHP_EOL);
 echo sprintf("removed element: %s %s", $result, PHP_EOL);
 
 // length of the array
-$result = $client->jsonArrayLength(OBJECT_KEY, '.colors');
+$result = $client->jsonArrayLength(OBJECT_KEY, COLORS_KEY);
 echo sprintf("new length of the array after popping it: %s %s", $result, PHP_EOL);
-echo sprintf("array after popping: %s %s", json_encode($client->jsonGet(OBJECT_KEY, '.colors'), true), PHP_EOL . PHP_EOL);
+echo sprintf("array after popping: %s %s", json_encode($client->jsonGet(OBJECT_KEY, COLORS_KEY), true), PHP_EOL . PHP_EOL);
 
 // trim array
-$result = $client->jsonArrayTrim(OBJECT_KEY, 1, 2, '.colors');
+$result = $client->jsonArrayTrim(OBJECT_KEY, 1, 2, COLORS_KEY);
 echo sprintf("*** Trim array in '.colors' path from index 1 to 2 %s", PHP_EOL);
 echo sprintf("new length of the array after trimming: %s %s", $result, PHP_EOL);
-echo sprintf("array after trimming: %s %s", json_encode($client->jsonGet(OBJECT_KEY, '.colors'), true), PHP_EOL . PHP_EOL);
+echo sprintf("array after trimming: %s %s", json_encode($client->jsonGet(OBJECT_KEY, COLORS_KEY), true), PHP_EOL . PHP_EOL);
 
 // get keys of a object as array
 $result = $client->jsonObjectKeys(OBJECT_KEY); // by default path = '.' (root path)
@@ -134,7 +139,7 @@ echo json_encode($client->jsonGetAsResp(OBJECT_KEY), true) . PHP_EOL . PHP_EOL;
 
 // Get from 2 paths
 echo sprintf("*** Getting data from paths '.colors' and '.location' for %s key: %s", OBJECT_KEY, PHP_EOL);
-echo json_encode($client->jsonGet(OBJECT_KEY, '.colors', '.location'), true) . PHP_EOL . PHP_EOL;
+echo json_encode($client->jsonGet(OBJECT_KEY, COLORS_KEY, '.location'), true) . PHP_EOL . PHP_EOL;
 
 // increment by integer
 echo sprintf("*** Incremented by 2 the value stored in path '.age' for %s key: %s", OBJECT_KEY, PHP_EOL);
@@ -176,7 +181,7 @@ echo sprintf(
     'nonexistent',
     PHP_EOL
 );
-$result = $client->jsonMultiGet([OBJECT_KEY, SECONDARY, 'nonexistent'], '.colors');
+$result = $client->jsonMultiGet([OBJECT_KEY, SECONDARY, 'nonexistent'], COLORS_KEY);
 echo sprintf("'.colors' in '%s' key: %s%s", OBJECT_KEY, json_encode($result[0]), PHP_EOL);
 echo sprintf("'.colors' in '%s' key: %s%s", SECONDARY, json_encode($result[1]), PHP_EOL);
 echo sprintf("'.colors' in '%s' key: %s%s", 'nonexistent', json_encode($result[2]), PHP_EOL . PHP_EOL);
@@ -187,5 +192,5 @@ echo sprintf("type for '.name' path: %s%s", $client->jsonType(OBJECT_KEY, '.name
 echo sprintf("type for '.age' path: %s%s", $client->jsonType(OBJECT_KEY, '.age'), PHP_EOL);
 echo sprintf("type for '.height' path: %s%s", $client->jsonType(OBJECT_KEY, '.height'), PHP_EOL);
 echo sprintf("type for '.location' path: %s%s", $client->jsonType(OBJECT_KEY, '.location'), PHP_EOL);
-echo sprintf("type for '.colors' path: %s%s", $client->jsonType(OBJECT_KEY, '.colors'), PHP_EOL);
+echo sprintf("type for '.colors' path: %s%s", $client->jsonType(OBJECT_KEY, COLORS_KEY), PHP_EOL);
 echo sprintf("type for '.license' path: %s%s", $client->jsonType(OBJECT_KEY, '.license'), PHP_EOL . PHP_EOL);

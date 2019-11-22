@@ -20,7 +20,7 @@ use Averias\RedisJson\Tests\Integration\BaseTestIntegration;
 
 class JsonArrayTrimCommandTest extends BaseTestIntegration
 {
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
         static::$reJsonClient->jsonArrayAppend(Keys::DEFAULT_KEY, '.colors', ...static::getArrayColors());

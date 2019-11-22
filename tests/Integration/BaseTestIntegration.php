@@ -42,13 +42,13 @@ class BaseTestIntegration extends TestCase
     /**
      * @throws RedisClientException
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$reJsonClient  = self::getReJsonClient();
         static::storeData(Keys::DEFAULT_KEY, static::$defaultData);
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         if (static::$reJsonClient) {
             static::$reJsonClient->select(0);

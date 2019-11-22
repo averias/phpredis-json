@@ -29,7 +29,7 @@ class JsonMultiplyNumByCommandTest extends BaseTestIntegration
         'stringValStartingByFloat' => '3abc'
     ];
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$reJsonClient  = self::getReJsonClient();
         static::storeData(Keys::DEFAULT_KEY, self::$data);
