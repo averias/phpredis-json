@@ -24,6 +24,7 @@ before_install:
 
 before_script:
   - mkdir -p build/coverage
+  - php -i
 
 script:
   - ./vendor/bin/phpunit
