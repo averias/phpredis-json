@@ -26,4 +26,4 @@ before_script:
   - mkdir -p build/coverage
 
 script:
-  - ./vendor/bin/phpunit tests/Unit
+  - ./vendor/bin/phpunit
