@@ -1,5 +1,6 @@
 ![GitHub](https://img.shields.io/github/license/averias/phpredis-json?style=plastic)
 ![Packagist Version](https://img.shields.io/packagist/v/averias/phpredis-json?style=plastic)
+![Travis (.org) branch](https://img.shields.io/travis/averias/phpredis-json/master?style=plastic)
 
 # Phpredis-JSON
 RedisJson with the PHP Redis extension [phpredis](https://github.com/phpredis/phpredis).
