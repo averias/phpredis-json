@@ -6,7 +6,7 @@ services:
   - docker
 
 install:
-  - composer install
+  - composer install --prefer-dist
 
 before_install:
   - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
