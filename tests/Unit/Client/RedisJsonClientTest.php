@@ -43,7 +43,7 @@ class RedisJsonClientTest extends TestCase
     {
         $mock = $this->getMockBuilder(RedisClientAdapterInterface::class)
             ->disableOriginalConstructor()
-            ->setMethods(['executeJsonCommand', 'executeCommandByName', 'executeRawCommand'])
+            ->onlyMethods(['executeJsonCommand', 'executeCommandByName', 'executeRawCommand'])
             ->getMock();
         $mock->expects($rawCommandExpects)
             ->method('executeRawCommand')

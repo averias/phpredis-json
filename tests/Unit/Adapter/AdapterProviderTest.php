@@ -45,7 +45,7 @@ class AdapterProviderTest extends TestCase
 
         $providerMock = $this->getMockBuilder(AdapterProvider::class)
             ->setConstructorArgs([new RedisClientValidator()])
-            ->setMethods(['getRedisClient'])
+            ->onlyMethods(['getRedisClient'])
             ->getMock();
         $providerMock->method('getRedisClient')
             ->willReturn($this->getRedisClientMock($info, $moduleList));
@@ -56,7 +56,7 @@ class AdapterProviderTest extends TestCase
     {
         $providerMock = $this->getMockBuilder(AdapterProvider::class)
             ->setConstructorArgs([new RedisClientValidator()])
-            ->setMethods(['getRedisClient'])
+            ->onlyMethods(['getRedisClient'])
             ->getMock();
         $providerMock->method('getRedisClient')
             ->willReturn(
@@ -73,7 +73,7 @@ class AdapterProviderTest extends TestCase
     {
         $redisClientMock =  $this->getMockBuilder(RedisClientAdapter::class)
             ->disableOriginalConstructor()
-            ->setMethods(['executeCommandByName', 'executeRawCommand'])
+            ->onlyMethods(['executeCommandByName', 'executeRawCommand'])
             ->getMock();
 
         $redisClientMock->method('executeCommandByName')
