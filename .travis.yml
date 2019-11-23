@@ -21,5 +21,8 @@ before_install:
   - docker run --name redislab-rejson -it -d -p 127.0.0.1:6379:6379 redislabs/rejson:1.0.4
   - docker ps -a
 
+before_script:
+  - mkdir -p build/coverage
+
 script:
-  - phpunit tests/Integration
+  - ./vendor/bin/phpunit tests/Unit
