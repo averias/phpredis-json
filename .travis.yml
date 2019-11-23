@@ -11,13 +11,13 @@ services:
   - docker
 
 install:
-  - pecl install redis-5.0.1
+#  - pecl install redis-5.0.1
   - composer self-update
   - composer clear-cache
   - composer install --prefer-dist
 
 before_install:
-#  - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - docker pull redislabs/rejson:1.0.4
   - docker run --name redislab-rejson -it -d -p 127.0.0.1:6379:6379 redislabs/rejson:1.0.4
   - docker ps -a
@@ -26,4 +26,4 @@ before_script:
   - mkdir -p build/coverage
 
 script:
-  - ./vendor/bin/phpunit
+  - ./vendor/bin/phpunit tests/Unit

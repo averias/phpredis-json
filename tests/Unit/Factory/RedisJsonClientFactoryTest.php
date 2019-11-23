@@ -31,15 +31,15 @@ class RedisJsonClientFactoryTest extends TestCase
         ]);
     }
 
-    public function testCreateClient()
-    {
-        $factory = new RedisJsonClientFactory();
-        $client = $factory->createClient([
-            Connection::HOST => REDIS_TEST_SERVER,
-            Connection::PORT => (int) REDIS_TEST_PORT,
-            Connection::TIMEOUT => 2
-        ]);
-
-        $this->assertInstanceOf(RedisJsonClientInterface::class, $client);
-    }
+//    public function testCreateClient()
+//    {
+//        $factory = new RedisJsonClientFactory();
+//        $client = $factory->createClient([
+//            Connection::HOST => REDIS_TEST_SERVER,
+//            Connection::PORT => (int) REDIS_TEST_PORT,
+//            Connection::TIMEOUT => 2
+//        ]);
+//
+//        $this->assertInstanceOf(RedisJsonClientInterface::class, $client);
+//    }
 }
