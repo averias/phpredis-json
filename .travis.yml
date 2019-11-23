@@ -1,3 +1,5 @@
+sudo: required
+
 language: php
 
 cache:
@@ -12,6 +14,7 @@ services:
 
 install:
   - composer self-update
+  - composer clear-cache
   - composer install --prefer-dist
 
 before_install:
