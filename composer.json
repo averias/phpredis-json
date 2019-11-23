@@ -17,7 +17,7 @@
   ],
   "require": {
     "php": "^7.2",
-    "ext-redis": "*",
+    "ext-redis": "^5.0.1",
     "ext-json": "*",
     "myclabs/php-enum": "^1.7"
   },
