@@ -410,9 +410,9 @@ class RedisClientAdapterTest extends TestCase
                 ->with(...$connectionValues)
                 ->willReturn($returnValueForConnectMethod);
         }
-        $redisMock->expects($setOptionMethodExpectation)
-            ->method('setOption')
-            ->with(8, 1);
+//        $redisMock->expects($setOptionMethodExpectation)
+//            ->method('setOption')
+//            ->with(8, 1);
         $redisMock->expects($selectMethodExpectation)
             ->method('select')
             ->with($databaseIndex);
