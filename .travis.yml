@@ -16,3 +16,5 @@ before_install:
 
 script:
   - ./vendor/bin/phpunit
+
+cache: false
