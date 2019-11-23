@@ -29,9 +29,9 @@
             </exclude>
         </whitelist>
     </filter>
-<!--    <logging>-->
-<!--        <log type="coverage-html" target="build/coverage" />-->
-<!--    </logging>-->
+    <logging>
+        <log type="coverage-html" target="build/coverage" />
+    </logging>
     <php>
         <const name="REDIS_TEST_SERVER" value="127.0.0.1" />
         <const name="REDIS_TEST_PORT" value="6379" />
