@@ -359,7 +359,7 @@ class RedisClientAdapterTest extends TestCase
     {
         return $this->getMockBuilder(ConnectionOptions::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getConnectionValues', 'getDatabase', 'isPersistent'])
+            ->onlyMethods(['getConnectionValues', 'getDatabase', 'isPersistent'])
             ->getMock();
     }
 
@@ -389,7 +389,18 @@ class RedisClientAdapterTest extends TestCase
     {
         return $this->getMockBuilder(Redis::class)
             ->disableOriginalConstructor()
-            ->setMethods(['getLastError', 'rawCommand', 'select', 'setOption', 'pconnect', 'connect', 'isConnected', 'hset'])
+            ->onlyMethods(
+                [
+                    'getLastError',
+                    'rawCommand',
+                    'select',
+                    'setOption',
+                    'pconnect',
+                    'connect',
+                    'isConnected',
+                    'hset'
+                ]
+            )
             ->getMock();
     }
 
