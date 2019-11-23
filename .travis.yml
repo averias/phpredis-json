@@ -1,5 +1,3 @@
-sudo: required
-
 language: php
 
 cache:
@@ -24,4 +22,4 @@ before_install:
   - docker ps -a
 
 script:
-  - phpunit tests/Unit
+  - phpunit tests/Integration
