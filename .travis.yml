@@ -1,5 +1,13 @@
 language: php
 
+dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "averias"
+    token:
+      secure: "Ac1lEYg+hx0VjNkl/VgiIU9eVIg+Qlrr8scOnNHJESfFruPnE7X8Pl4R6MIdvkV3iLzTKr1zJUVNi5+xQdd3JGL4Oj/Gif+QdjzRyMqSSge7aSvvYF+hK62809IP+LfwFT6qIxKESuiMMhYcrI9CWoMAFzky7XDjWA9yT2kcCuG1zfxmEijdHbHA16rvTX7f2QuJ2uBJtAbx5W6fd2jThxVvEgX7ST9pDLDFQ3nfyLggkF/SMLfHncnLFJVWMjKxDeDp7HCjAHNGFz3bbYdun8eJ/FFYGLOxWDPGDV/fy8BSzkStxRqFXAjYHJsZYSEc8eX3hiH/7iyNklyot8g+j5A/YTcIPn6Qmn6deWG5OA7vFX2rDzBl3f94JLE8+ABcOHTxnKQM7wKnHCu3z36g9qVrzvS4Bkqk9lx2sigkRafxilR69T0/dlZKEJCcoCBntKoKk46ePus8BwfVLwc29eR/khGMf7GcY/B9Ow5KUGfynsWV/S7Ote7upbpLl2pTjLuBpo4TZuYSN1t/6lu7gU0EmCj4zcI1Mu7lZ89YGUOyVvnC0F/lmGzrqQcQGEUg3FSBnkrP6GSkFCixAd7bAdFhOz0DvcCPZr646WvAoBShk+RC2y1Mc3C9sNmgrpTvNm2D6xAcH+C0/BYGtniK/zQeKaG0RQClxb1/HDf4r8c="
+
 cache:
   directories:
     - $HOME/.composer/cache/files
@@ -26,3 +34,4 @@ before_script:
 
 script:
   - ./vendor/bin/phpunit
+  - sonar-scanner
