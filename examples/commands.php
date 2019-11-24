@@ -12,7 +12,7 @@
 
 namespace Examples;
 
-require(dirname(__DIR__).'/vendor/autoload.php');
+require(dirname(__DIR__) . '/vendor/autoload.php');
 
 use Averias\RedisJson\Client\RedisJsonClient;
 use Averias\RedisJson\Factory\RedisJsonClientFactory;
@@ -51,7 +51,7 @@ const COLORS_KEY = '.colors';
 $client->jsonSet(OBJECT_KEY, BaseTestIntegration::$defaultData);
 
 echo sprintf("*** Added object to '%s' key: %s", OBJECT_KEY, PHP_EOL);
-echo json_encode($client->jsonGet(OBJECT_KEY), true) . PHP_EOL . PHP_EOL;
+echo json_encode($client->jsonGet(OBJECT_KEY)) . PHP_EOL . PHP_EOL;
 
 // append to array
 $result = $client->jsonArrayAppend(OBJECT_KEY, COLORS_KEY, 'blue', 'white');
