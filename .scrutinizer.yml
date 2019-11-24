@@ -23,11 +23,11 @@ build:
             coverage:
               file: build/coverage.xml
               format: clover
-    environment:
-      php:
-        version:  "7.2"
-        pecl_extensions:
-          - redis
+  environment:
+    php:
+      version:  "7.2"
+      pecl_extensions:
+        - redis
 filter:
   excluded_paths:
     - 'tests/*'
