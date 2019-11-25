@@ -19,7 +19,7 @@ build:
             - 6379
       tests:
         override:
-          - command: ./vendor/bin/phpunit
+          - command: ./vendor/bin/phpunit ./docker-tests/phpunit_docker.xml
             coverage:
               file: build/coverage.xml
               format: clover
