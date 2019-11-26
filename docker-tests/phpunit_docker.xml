@@ -32,7 +32,7 @@
     </filter>
     <logging>
         <log type="coverage-html" target="../build/coverage" />
-        <log type="coverage-clover" target="build/coverage.xml" />
+        <log type="coverage-clover" target="../build/coverage.xml" />
     </logging>
     <php>
         <const name="REDIS_TEST_SERVER" value="redislab-rejson" />
