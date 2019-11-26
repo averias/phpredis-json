@@ -10,7 +10,6 @@ build:
           -
             command: phpcs-run
             use_website_config: true
-    tests: true
     coverage:
       services:
         redislab-rejson:
@@ -19,7 +18,7 @@ build:
             - 6379
       tests:
         override:
-          - command: ./vendor/bin/phpunit ./docker-tests/phpunit_docker.xml
+          - command: ./vendor/bin/phpunit --configuration ./docker-tests/phpunit_docker.xml
             coverage:
               file: build/coverage.xml
               format: clover
