@@ -12,9 +12,9 @@ build:
             use_website_config: true
     coverage:
       environment:
-        php:
-          pecl_extensions:
-            - redis
+#        php:
+#          pecl_extensions:
+#            - redis
       services:
         redislab-rejson:
           image: redislabs/rejson:1.0.4
