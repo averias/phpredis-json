@@ -1,6 +1,8 @@
-![GitHub](https://img.shields.io/github/license/averias/phpredis-json?style=plastic)
-![Packagist Version](https://img.shields.io/packagist/v/averias/phpredis-json?style=plastic)
+[![Code Coverage](https://scrutinizer-ci.com/g/averias/phpredis-json/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/averias/phpredis-json/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/averias/phpredis-json/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/averias/phpredis-json/?branch=master)
 ![Travis (.org) branch](https://img.shields.io/travis/averias/phpredis-json/master?style=plastic)
+![Packagist Version](https://img.shields.io/packagist/v/averias/phpredis-json?style=plastic)
+![GitHub](https://img.shields.io/github/license/averias/phpredis-json?style=plastic)
 
 # Phpredis-JSON
 RedisJson with the PHP Redis extension [phpredis](https://github.com/phpredis/phpredis).
