@@ -12,9 +12,6 @@ build:
             use_website_config: true
     coverage:
       environment:
-#        php:
-#          pecl_extensions:
-#            - redis
       services:
         redislab-rejson:
           image: redislabs/rejson:1.0.4
@@ -27,8 +24,6 @@ build:
               file: build/coverage.xml
               format: clover
   environment:
-#    php:
-#      version:  "7.2"
     redis: false
     hosts:
       redislab-rejson:   127.0.0.1
