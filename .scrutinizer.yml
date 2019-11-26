@@ -11,6 +11,10 @@ build:
             command: phpcs-run
             use_website_config: true
     coverage:
+      environment:
+        php:
+          pecl_extensions:
+            - redis
       services:
         redislab-rejson:
           image: redislabs/rejson:1.0.4
@@ -25,8 +29,9 @@ build:
   environment:
     php:
       version:  "7.2"
-      pecl_extensions:
-        - redis
+    redis: false
+    hosts:
+      redislab-rejson:   127.0.0.1
 filter:
   excluded_paths:
     - 'tests/*'
