@@ -59,7 +59,7 @@ class JsonCommands extends Enum
         self::ARRAY_TRIM => self::DEFAULT_MESSAGE . ', trimming no array, ...',
         self::OBJECT_KEYS => self::DEFAULT_MESSAGE . ', no JSON object, ...',
         self::OBJECT_LENGTH => self::DEFAULT_MESSAGE . ', empty object, no object, ...',
-        self::MEMORY_USAGE => self::DEFAULT_MESSAGE ,
+        self::MEMORY_USAGE => self::DEFAULT_MESSAGE,
         self::GET_AS_RESP => self::DEFAULT_MESSAGE
     ];
 }

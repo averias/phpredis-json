@@ -1,0 +1,40 @@
+build:
+  nodes:
+    analysis:
+      project_setup:
+        override:
+          - 'true'
+      tests:
+        override:
+          - php-scrutinizer-run
+          -
+            command: phpcs-run
+            use_website_config: true
+    coverage:
+      environment:
+      services:
+        redislab-rejson:
+          image: redislabs/rejson:1.0.4
+          ports:
+            - 6379
+      tests:
+        override:
+          - command: ./vendor/bin/phpunit --configuration ./docker-tests/phpunit_docker.xml
+            coverage:
+              file: ./build/coverage.xml
+              format: 'php-clover'
+  environment:
+    redis: false
+    hosts:
+      redislab-rejson:   127.0.0.1
+filter:
+  excluded_paths:
+    - 'tests/*'
+    - 'examples/*'
+checks:
+  php: true
+coding_style:
+  php:
+    spaces:
+      around_operators:
+        concatenation: true

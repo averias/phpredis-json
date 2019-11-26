@@ -12,7 +12,7 @@
 
 namespace Examples;
 
-require(dirname(__DIR__).'/vendor/autoload.php');
+require(dirname(__DIR__) . '/vendor/autoload.php');
 
 use Averias\RedisJson\Client\RedisJsonClient;
 use Averias\RedisJson\Enum\JsonCommands;
@@ -66,10 +66,10 @@ echo ($result === true ? 'true' : 'false') . PHP_EOL; // true
 $result = $client->jsonGet('people'); // $result = ["name":"gafael","age":12]
 echo json_encode($result) . PHP_EOL; // {"name":"gafael","age":12}
 
-$result =  $client->jsonGet('people', '.name');
+$result = $client->jsonGet('people', '.name');
 echo $result . PHP_EOL; // "gafael"
 
-$result =  $client->jsonGet('people', '.age');
+$result = $client->jsonGet('people', '.age');
 echo $result . PHP_EOL; // 12
 
 // "nonexistent" key does not exists, so a ResponseException is thrown
@@ -81,10 +81,10 @@ try {
 }
 
 // you can also send RedisJSON command as raw commands using "executeRawCommand", you will send a receive JSON values
-$result =  $client->executeRawCommand(JsonCommands::SET, 'people', '.colors', '["blue", "green"]');
+$result = $client->executeRawCommand(JsonCommands::SET, 'people', '.colors', '["blue", "green"]');
 echo $result . PHP_EOL; // 'OK'
 
-$result =  $client->executeRawCommand(JsonCommands::GET, 'people', '.');
+$result = $client->executeRawCommand(JsonCommands::GET, 'people', '.');
 echo $result . PHP_EOL; // {"name":"gafael","age":12,"colors":["blue","green"]}
 
 

@@ -287,7 +287,7 @@ trait JsonCommandTrait
     /**
      * @param string $key
      * @param string $path
-     * @return int
+     * @return bool
      */
     public function jsonForget(string $key, string $path = '.')
     {
