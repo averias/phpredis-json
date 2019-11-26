@@ -21,8 +21,8 @@ build:
         override:
           - command: ./vendor/bin/phpunit --configuration ./docker-tests/phpunit_docker.xml
             coverage:
-              file: build/coverage.xml
-              format: clover
+              file: ./build/coverage.xml
+              format: 'php-clover'
   environment:
     redis: false
     hosts:
