@@ -1,6 +1,7 @@
 ## 1.3.0 - 2020-01-24
 
 - removed `symplify/changelog-linker` changelog generator
+- changed Scrutinizer by CodeClimate
 
 ## 1.2.3 - 2020-01-24
 

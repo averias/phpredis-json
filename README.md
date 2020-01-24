@@ -1,8 +1,8 @@
-[![Code Coverage](https://scrutinizer-ci.com/g/averias/phpredis-json/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/averias/phpredis-json/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/averias/phpredis-json/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/averias/phpredis-json/?branch=master)
-![Travis (.org) branch](https://img.shields.io/travis/averias/phpredis-json/master?style=plastic)
-![Packagist Version](https://img.shields.io/packagist/v/averias/phpredis-json?style=plastic)
-![GitHub](https://img.shields.io/github/license/averias/phpredis-json?style=plastic)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/0139a26763ee4a0c3343/test_coverage)](https://codeclimate.com/github/averias/phpredis-json/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0139a26763ee4a0c3343/maintainability)](https://codeclimate.com/github/averias/phpredis-json/maintainability)
+[![Build Status](https://travis-ci.org/averias/phpredis-json.svg?branch=master)](https://travis-ci.org/averias/phpredis-json)
+[![Packagist Version](https://img.shields.io/packagist/v/averias/phpredis-json.svg)](https://packagist.org/packages/averias/phpredis-json)
+[![GitHub](https://img.shields.io/github/license/averias/phpredis-json.svg)](https://github.com/averias/phpredis-json)
 
 # Phpredis-JSON
 RedisJson with the PHP Redis extension [phpredis](https://github.com/phpredis/phpredis).
