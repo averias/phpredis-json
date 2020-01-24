@@ -12,7 +12,7 @@
  * the LICENSE file that is distributed with this source code.
  */
 
-namespace Averias\RedisJson\Client;
+namespace Averias\RedisJson\Command\Traits;
 
 interface JsonCommandTraitInterface
 {
