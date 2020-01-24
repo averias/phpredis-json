@@ -1,3 +1,0 @@
-parameters:
-  repository_url: 'https://github.com/averias/phpredis-json'
-  authors_to_ignore: ['averias']
