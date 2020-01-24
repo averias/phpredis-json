@@ -14,6 +14,7 @@
 
 namespace Averias\RedisJson\Client;
 
+use Averias\RedisJson\Command\Traits\JsonCommandTraitInterface;
 use Averias\RedisJson\Encoder\Traits\JsonEncoderTraitInterface;
 
 interface RedisJsonClientInterface extends ClientInterface, JsonCommandTraitInterface, JsonEncoderTraitInterface
