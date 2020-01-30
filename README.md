@@ -26,7 +26,7 @@ and decode the JSON responses back from Redis
 - PHP 7.2+ with PHP Redis extension 5 installed
 
 ## Usage
-```
+```php
 <?php
 
 use Averias\RedisJson\Enum\JsonCommands;
@@ -108,7 +108,7 @@ echo json_encode($ret) . PHP_EOL;
 - **RedisJSON commands:** please take a look to the list of [phpredis-json commands](https://github.com/averias/phpredis-json/blob/master/docs/JSON-COMMANDS.md)
 - **Phpredis commands:** you can send Redis commands as specified in [phpredis documentation](https://github.com/phpredis/phpredis#table-of-contents)
 - **Raw commands:** you can send whatever you want to Redis by using `RedisJsonClient::executeRawCommand`:
-```
+```php
 // raw Redis JSON command
 $client->executeRawCommand(JsonCommands::GET, 'people', '.');
 
