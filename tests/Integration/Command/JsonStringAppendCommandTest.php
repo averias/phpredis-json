@@ -15,10 +15,10 @@
 namespace Averias\RedisJson\Tests\Integration\Command;
 
 use Averias\RedisJson\Exception\ResponseException;
-use Averias\RedisJson\Tests\Enum\Keys;
+use Averias\RedisJson\Enum\Keys;
 use Averias\RedisJson\Tests\Integration\BaseTestIntegration;
 
-class jsonStringAppendCommandTest extends BaseTestIntegration
+class JsonStringAppendCommandTest extends BaseTestIntegration
 {
     public function testAppendString()
     {
