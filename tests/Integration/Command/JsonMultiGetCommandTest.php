@@ -14,7 +14,7 @@
 
 namespace Averias\RedisJson\Tests\Integration\Command;
 
-use Averias\RedisJson\Tests\Enum\Keys;
+use Averias\RedisJson\Enum\Keys;
 use Averias\RedisJson\Tests\Integration\BaseTestIntegration;
 
 class JsonMultiGetCommandTest extends BaseTestIntegration

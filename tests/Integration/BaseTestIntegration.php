@@ -18,7 +18,7 @@ use Averias\RedisJson\Client\RedisJsonClientInterface;
 use Averias\RedisJson\Exception\RedisClientException;
 use Averias\RedisJson\Factory\RedisJsonClientFactory;
 use Averias\RedisJson\Enum\Connection;
-use Averias\RedisJson\Tests\Enum\Keys;
+use Averias\RedisJson\Enum\Keys;
 use PHPUnit\Framework\TestCase;
 
 class BaseTestIntegration extends TestCase
@@ -56,7 +56,7 @@ class BaseTestIntegration extends TestCase
         }
     }
 
-    protected static function getReJsonClientConfig()
+    protected static function getReJsonClientConfig(): array
     {
         return [
             Connection::HOST => REDIS_TEST_SERVER,

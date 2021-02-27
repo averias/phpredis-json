@@ -1,3 +1,7 @@
+## 1.4.0 - 2021-02-27
+
+- fixed wrong namespace for `Enum/Keys`
+
 ## 1.3.0 - 2020-01-24
 
 - removed `symplify/changelog-linker` changelog generator
