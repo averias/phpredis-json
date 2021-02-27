@@ -16,7 +16,7 @@ namespace Averias\RedisJson\Tests\Unit\Command\Traits;
 
 use Averias\RedisJson\Enum\JsonCommands;
 use Averias\RedisJson\Exception\ResponseException;
-use Averias\RedisJson\Tests\Enum\Keys;
+use Averias\RedisJson\Enum\Keys;
 use Averias\RedisJson\Tests\Unit\Command\BaseTestJsonCommandTrait;
 
 class JsonArrayAppendCommandTest extends BaseTestJsonCommandTrait
